@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "Augie Pixel";
+    src: url("augiepixel.ttf") format("truetype");
+}
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding : 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Augie Pixel", Arial, sans-serif;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    color: #111;
+    background: #fff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 4vw;
+    font-size: clamp(20px, 2.2vw, 32px);
+    background-color: #ff9625;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #111;
+    text-decoration: none;
+}
+
+.logo {
+    width: 1.4em;
+    height: 1.4em;
+    object-fit: contain;
+}
+
+.nav-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.nav-links {
+    display: flex;
+    gap: clamp(16px, 3vw, 40px);
+}
+
+.nav-links a {
+    color: #111;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px 80px;
+
+h1 {
+    font-size: clamp(72px, 10vw, 140px);
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.byline {
+    font-size: clamp(28px, 3.5vw, 48px);
+    margin-top: 16px;
+}
+
+.mission {
+    font-size: clamp(22px, 2.6vw, 36px);
+    margin-top: 20px;
+    max-width: 900px;
+}
+
+.scroll {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 28px;
+    text-align: center;
+}
+
+.arrow {
+    display: block;
+    margin-top: 4px;
+}
