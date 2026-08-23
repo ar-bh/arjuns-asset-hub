@@ -3,10 +3,13 @@
     src: url("augiepixel.ttf") format("truetype");
 }
 
-html {
+* {
     box-sizing: border-box;
+}
+
+html {
     margin: 0;
-    padding : 0;
+    padding: 0;
 }
 
 body {
@@ -25,7 +28,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: 16px 4vw;
     font-size: clamp(20px, 2.2vw, 32px);
     background-color: #ff9625;
@@ -40,8 +42,8 @@ nav {
 }
 
 .logo {
-    width: 1.4em;
-    height: 1.4em;
+    width: 3.2em;
+    height: 3.2em;
     object-fit: contain;
 }
 
@@ -52,6 +54,10 @@ nav {
     line-height: 1.2;
 }
 
+.nav-home a {
+    color: #111;
+    text-decoration: none;
+}
 .nav-links {
     display: flex;
     gap: clamp(16px, 3vw, 40px);
@@ -67,11 +73,14 @@ nav {
 }
 
 main {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 24px 80px;
+    padding: 24px 24px 80px;
+}
 
 h1 {
     font-size: clamp(72px, 10vw, 140px);
@@ -95,10 +104,90 @@ h1 {
     left: 0;
     right: 0;
     bottom: 28px;
+    margin: 0;
     text-align: center;
 }
 
 .arrow {
     display: block;
     margin-top: 4px;
+}
+
+.page-title {
+    font-size: clamp(40px, 6vw, 72px);
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+    width: min(920px, 90vw);
+}
+
+.tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+    background-color: #c8c8c8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 6px solid #111;
+    color: #111;
+    text-decoration: none;
+    text-align: center;
+    font-size: clamp(40px, 5vw, 72px);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--tile-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.tile.empty {
+    background-color: transparent;
+    background-image: none;
+}
+
+.tile:hover {
+    background-color: #b0b0b0;
+    outline: 6px solid #111;
+    outline-offset: 4px;
+}
+
+.tile.soon {
+    pointer-events: none;
+    border: 2px;
+}
+
+.tile-label {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    font-size: inherit;
+    -webkit-text-stroke: 8px #111;
+    paint-order: stroke fill;
+    text-shadow:
+        -2px -2px 0 #111,
+        2px -2px 0 #111,
+        -2px -2px 0 #111,
+        2px 2px 0 #111,
+}
+
+.tile.soon .tile-label {
+    -webkit-text-stroke: 0;
+    text-shadow: none;
 }

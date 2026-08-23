@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category - Arjun's Asset Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a class="brand" href="index.html">
+            <img class="logo" src="assets/logo.png" alt="logo">
+            Arjun's Asset Hub
+        </a>
+
+        <div class="nav-home">
+            <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="store.html">Asset Store</a>
+            <a href="">Source</a>
+            <a href="">Donate</a>
+        </div>
+
+    </nav>
+
+    <main>
+        <h1 id="category-title" class="page-title"></h1>
+        <p class="byline">projects</p>
+        <div id="projects"class="card-list"></div>
+    </main>
+
+    <script src="data.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const categoryName = params.get("name");
+        const category = store[categoryName];
+        const projects = category ? category.projects : null;
+
+        document.getElementById("category-title").textContent = categoryName || "Unknown";
+
+        const box = document.getElementById("projects");
+
+        function addCard(label, href, image, extraClass) {
+            const card = document.createElement(href ? "a": "div");
+            card.className = "tile" + (extraClass ? " " + extraClass : "");
+            const text = document.createElement("span");
+            text.className = "tile-label";
+            text.textContent = label;
+            card.appendChild(text);
+            if (href) {
+                card.href = href;
+            }
+            if (image) {
+                card.style.setProperty("--tile-image", "url('" + image + "')");
+            }
+            box.appendChild(card);
+        }
+
+        if (!projects) {
+            box.textContent = "No projects in this category yet.";
+        } else {
+            for (const project of Object.values(projects)) {
+                addCard(project.name, project.github, project.image);
+            }
+            addCard("coming soon", "", "", "soon");
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asset Store - Arjun's Asset Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a class="brand" href="index.html">
+            <img class="logo" src="assets/logo.png" alt="logo">
+            Arjun's Asset Hub
+        </a>
+
+        <div class="nav-home">
+            <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="store.html">Asset Store</a>
+            <a href="">Source</a>
+            <a href="">Donate</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Asset Store</h1>
+        <p class="byline"></p>
+        <div id="categories" class="card-list"></div>
+    </main>
+
+    <script src="data.js"></script>
+    <script>
+        const box = document.getElementById("categories");
+        const names = Object.keys(store);
+
+        function addCard(label, href, image, extraClass) {
+            const card = document.createElement(href ? "a" : "div");
+            card.className = "tile" + (extraClass ? " " + extraClass : "");
+            const text = document.createElement("span");
+            text.className = "tile-label";
+            text.textContent = label;
+            card.appendChild(text);
+            if (href) {
+                card.href = href;
+            }
+            if (image) {
+                card.style.setProperty("--tile-image", "url('" + image + "')");
+            }
+            box.appendChild(card);
+        }
+
+        for (const name of names) {
+            addCard(
+                name,
+                "category.html?name=" + encodeURIComponent(name),
+                store[name].image
+            );
+        }
+
+        addCard("coming soon", "", "", "soon");
+        addCard("coming soon", "", "", "soon");
+        addCard("coming soon", "", "", "soon");
+        addCard("coming soon", "", "", "soon");
+    </script>
+
+</body>
+
+
+</html>
