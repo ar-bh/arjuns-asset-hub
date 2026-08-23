@@ -17,7 +17,7 @@
         </div>
 
         <div class="nav-links">
-            <a href="store.html">Asset Store</a>
+            <a class="nav-store" href="store.html">Asset Store</a>
             <a href="">Source</a>
             <a href="">Donate</a>
         </div>
@@ -61,7 +61,12 @@
             box.textContent = "No projects in this category yet.";
         } else {
             for (const project of Object.values(projects)) {
-                addCard(project.name, project.github, project.image);
+                addCard(
+                    project.name,
+                    "project.html?category=" + encodeURIComponent(categoryName)
+                    + "&name=" + encodeURIComponent(project.name),
+                    project.image
+                )
             }
             addCard("coming soon", "", "", "soon");
         }

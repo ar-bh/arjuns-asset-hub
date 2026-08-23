@@ -6,11 +6,18 @@ const store = {
                 name: "Basic FPS Controller",
                 description: "A beginner-friendly simple first-person controller for Godot 4",
                 github: "https://github.com/ar-bh/basic-fps-controller-godot",
+                assetLib: "",
                 video: "https://www.youtube.com/watch?v=_U7ih_c0CjA",
                 image: "assets/basic-fps-controller/fps.png",
                 images: [
                     "assets/basic-fps-controller/fps.png",
                     "assets/basic-fps-controller/fps2.png"
+                ],
+                features: [
+                    "walk, sprint, and jump",
+                    "mouse look",
+                    "graybox test map",
+                    "debug mode",
                 ]
             }
         }

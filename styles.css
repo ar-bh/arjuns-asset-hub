@@ -28,8 +28,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 4vw;
-    font-size: clamp(20px, 2.2vw, 32px);
+    padding: 1.2vw 4vw;
+    font-size: clamp(24px, 3vw, 48px);
     background-color: #ff9625;
 }
 
@@ -52,20 +52,26 @@ nav {
     flex-direction: column;
     align-items: center;
     line-height: 1.2;
+    font-size: 1.3em;
 }
 
 .nav-home a {
     color: #111;
     text-decoration: none;
 }
+
 .nav-links {
     display: flex;
+    align-items: center;
     gap: clamp(16px, 3vw, 40px);
 }
 
 .nav-links a {
+    display: flex;
+    align-items: center;
     color: #111;
     text-decoration: none;
+    line-height: 1;
 }
 
 .nav-links a:hover {
@@ -114,15 +120,17 @@ h1 {
 }
 
 .page-title {
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(80px, 10vw, 150px);
+    margin: 0;
+    margin-top: 2vw;
 }
 
 .card-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 36px;
     margin-top: 40px;
-    width: min(920px, 90vw);
+    width: min(1400px, 94vw);
 }
 
 .tile {
@@ -140,7 +148,7 @@ h1 {
     color: #111;
     text-decoration: none;
     text-align: center;
-    font-size: clamp(40px, 5vw, 72px);
+    font-size: clamp(48px, 6vw, 96px);
     border-radius: 16px;
     overflow: hidden;
 }
@@ -170,7 +178,7 @@ h1 {
 
 .tile.soon {
     pointer-events: none;
-    border: 2px;
+    border: 2px solid #111;
 }
 
 .tile-label {
@@ -183,11 +191,177 @@ h1 {
     text-shadow:
         -2px -2px 0 #111,
         2px -2px 0 #111,
-        -2px -2px 0 #111,
-        2px 2px 0 #111,
+        -2px 2px 0 #111,
+        2px 2px 0 #111;
 }
 
 .tile.soon .tile-label {
     -webkit-text-stroke: 0;
     text-shadow: none;
+}
+
+.nav-store {
+    font-size: 1.25em;
+    padding: 0.15em 0.5em;
+    border: 2px solid #111;
+    border-radius: 8px;
+}
+
+.nav-store:hover {
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+}
+
+.project-page {
+    flex: 1;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 16px 2vw 24px;
+}
+
+.project-head {
+    position: relative;
+    display: block;
+    width: 96vw;
+}
+
+.project-head .page-title {
+    font-size: clamp(56px, 7vw, 150px);
+    margin: 0;
+    text-align: center;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 4px 12px;
+    border: 2px solid #111;
+    border-radius: 8px;
+    color: #111;
+    text-decoration: none;
+    font-size: clamp(18px, 2vw, 28px);
+}
+
+.project-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: stretch;
+    gap: 3vw;
+    width: 96vw;
+    flex: 1;
+    min-height: 0;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.gallery {
+    position: relative;
+    height: 100%;
+    border: 4px solid #111;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #d9d9d9;
+}
+
+.gallery-stage,
+.gallery-stage img,
+.gallery-stage iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.gallery-stage img {
+    object-fit: cover;
+}
+
+.gallery-stage iframe {
+    display: none;
+}
+
+.gallery-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    z-index: 2;
+}
+
+.gallery-nav button {
+    font-family: inherit;
+    font-size: 24px;
+    background: #fff;
+    border: 2px solid #111;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.project-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.desc-features {
+    flex: 0.5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    min-height: 0;
+    overflow: auto;
+    padding: 40px 0 12px;
+    border-top: 3px solid #111;
+    border-bottom: 3px solid #111;
+}
+
+.desc-features h2 {
+    margin: 0 0 8px;
+    font-size: clamp(32px, 3.4vw, 56px);
+    font-weight: normal;
+}
+
+.desc-features p,
+.desc-features li {
+    font-size: clamp(26px, 2.6vw, 40px);
+}
+
+.download {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.download h2 {
+    margin: 0 0 4px;
+    font-size: clamp(32px, 3.4vw, 52px);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.download a {
+    display: inline-block;
+    width: fit-content;
+    margin-left: 8px;
+    padding: 2px 10px;
+    border: 2px solid #111;
+    border-radius: 8px;
+    color: #111;
+    font-size: clamp(20px, 2.2vw, 32px);
+    text-decoration: underline;
+}
+
+.download a:hover {
+    background: #111;
+    color: #fff;
 }

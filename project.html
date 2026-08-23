@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project - Arjun's Asset Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <a class="brand" href="index.html">
+            <img class="logo" src="assets/logo.png" alt="logo">
+            Arjun's Asset Hub
+        </a>
+
+        <div class="nav-home">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="nav-links">
+            <a class="nav-store" href="store.html">Asset Store</a>
+            <a href="">Source</a>
+            <a href="">Donate</a>
+        </div>
+    </nav>
+
+   <main class="project-page">
+    <div class="project-head">
+        <a id="back" class="back" href="store.html">back</a>
+        <h1 id="project-title" class="page-title"></h1>
+    </div>
+
+    <div class="project-layout">
+        <div class="gallery">
+            <div class="gallery-stage">
+                <img id="gallery-image" alt="project-screenshot">
+                <iframe id="gallery-video" title="project video" allowfullscreen></iframe>
+            </div>
+
+            <div class="gallery-nav">
+                <button id="prev" type="button">&lt;</button>
+                <button id="next" type="button">&gt;</button>
+            </div>
+
+        </div>
+
+        <div class="project-info">
+            <div class="desc-features">
+                <div>
+                    <h2>Description</h2>
+                    <p id="desc"></p>
+                </div>
+
+                <div>
+                    <h2>Features</h2>
+                    <ul id="features"></ul>
+                </div>
+            </div>
+
+            <div class="download">
+                <h2>Download</h2>
+                <a id="link-git" target="_blank">GitHub</a>
+                <a id="link-lib" target="_blank">Godot Assset Library</a>
+            </div>
+
+
+
+        </div>
+    </div>
+   </main>
+
+    <script src="data.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const categoryName = params.get("category");
+        const projectName = params.get("name");
+        const project = store[categoryName] && store[categoryName].projects[projectName];
+
+        if (!project) {
+            document.getElementById("project-title").textContent = "Project not found. :(";
+        } else {
+            document.getElementById("project-title").textContent = project.name;
+            document.title = project.name + " - Arjun's Asset Hub";
+            document.getElementById("back").href = 
+                "category.html?name=" + encodeURIComponent(categoryName);
+            document.getElementById("desc").textContent = project.description;
+
+            const list = document.getElementById("features");
+            for (const item of project.features || []) {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            }
+
+            const git = document.getElementById("link-git");
+            git.href = project.github || "";
+            if (!project.github) git.style.display = "none";
+
+            const lib = document.getElementById("link-lib");
+            lib.href = project.assetLib || "";
+            if (!project.assetLib) lib.style.display = "none";
+
+            const slides = (project.images && project.images.length)
+                ? project.images.slice()
+                : (project.image ? [project.image] : []);
+            if (project.video) {
+                slides.unshift(project.video);
+            }
+
+            let index = 0;
+            const img = document.getElementById("gallery-image");
+            const frame = document.getElementById("gallery-video");
+
+            function youtubeId(url) {
+                const match = url.match(/[?&]v=([^&]+)/);
+                return match ? match[1] : "";
+            }
+
+            function showSlide() {
+                const current = slides[index] || "";
+                const id = youtubeId(current);
+
+                if (id) {
+                    img.style.display = "none";
+                    frame.style.display = "block";
+                    frame.src = "https://www.youtube.com/embed/" + id;
+                } else {
+                    frame.style.display = "none";
+                    frame.src = "";
+                    img.style.display = "block";
+                    img.src = current;
+                }
+            }
+
+            document.getElementById("prev").onclick = function () {
+                if (!slides.length) return;
+                index = (index - 1 + slides.length) % slides.length;
+                showSlide()
+            };
+            document.getElementById("next").onclick = function () {
+                if (!slides.length) return;
+                index = (index + 1) % slides.length;
+                showSlide();
+            };
+            showSlide();
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
