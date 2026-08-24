@@ -5,6 +5,7 @@
     <title>Arjun's Asset Hub</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.png" alt="logo">
 </head>
 
 <body>
@@ -21,20 +22,56 @@
 
         <div class="nav-links">
             <a class="nav-store" href="store.html">Asset Store</a>
-            <a href="">Source</a>
+            <a href="https://github.com/ar-bh/arjuns-asset-hub" target="_blank">Source</a>
             <a href="">Donate</a>
         </div>
 
     </nav>
 
-    <main>
+    <section class="hero">
         <h1>Arjun's Asset Hub</h1>
-        <!-- <img class="main-brand" src="assets/logo.png" alt="logo"> -->
         <p class="byline">made by 14yo Arjun Bhumula</p>
-        <p class="mission">to help anyone jump into their game-dev career with helpful tools and resources!</p>
-    </main>
+        <p class="mission">to help anyone jump into their game-dev and animation career with helpful tools and resources!</p>
+        <a class="scroll" href="#featured">scroll down <br><span class="arrow">▼</span></a>
+    </section>>
 
-    <p class="scroll">scroll down <br><span class="arrow">▼</span></p>
+    <section id="featured" class="featured">
+        <h2 class="page-title">featured</h2>
+        <div id="featured-list" class="card-list"></div>
+    </section>
+
+    <script src="data.js"></script>
+    <script>
+        const box = document.getElementById("featured-list");
+
+        function addCard(label, href, image) {
+            const card = document.createElement("a");
+            card.className = "tile";
+            const text = document.createElement("span");
+            text.className = "tile-label";
+            text.textContent = label;
+            card.appendChild(text);
+            card.href = href;
+            if (image) {
+                card.style.setProperty("--tile-image", "url('" + image + "')");
+            }
+            box.appendChild(card);
+        }
+
+        for (const categoryName of Object.keys(store)) {
+            const projects = store[categoryName].projects;
+            for (const project of Object.values(projects)) {
+                if (!project.featured) continue;
+                addCard(
+                    project.name,
+                    "project.html?category=" + encodeURIComponent(categoryName)
+                        + "&name=" + encodeURIComponent(project.name),
+                        project.image
+                );
+            }
+        }
+
+    </script>
 
 </body>
 

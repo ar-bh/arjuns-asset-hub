@@ -4,6 +4,7 @@ const store = {
         projects: {
             "Basic FPS Controller": {
                 name: "Basic FPS Controller",
+                featured: true,
                 description: "A beginner-friendly simple first-person controller for Godot 4",
                 github: "https://github.com/ar-bh/basic-fps-controller-godot",
                 assetLib: "",
