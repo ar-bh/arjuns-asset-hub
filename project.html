@@ -58,9 +58,15 @@
             </div>
 
             <div class="download">
-                <h2>Download</h2>
-                <a id="link-git" target="_blank">GitHub</a>
-                <a id="link-lib" target="_blank">Godot Assset Library</a>
+                <div>
+                    <h2>Download directly</h2>
+                    <a id="link-zip">.zip</a>
+                </div>
+                <div>
+                    <h2>Download on your own</h2>
+                    <a id="link-git" target="_blank">GitHub</a>
+                    <a id="link-lib" target="_blank">Godot Asset Library</a>
+                </div>
             </div>
 
 
@@ -69,8 +75,9 @@
     </div>
    </main>
 
-    <script src="data.js"></script>
+    <script src="load-store.js"></script>
     <script>
+    loadStore().then(function () {
         const params = new URLSearchParams(window.location.search);
         const categoryName = params.get("category");
         const projectName = params.get("name");
@@ -92,13 +99,17 @@
                 list.appendChild(li);
             }
 
+            const zip = document.getElementById("link-zip");
+            zip.href = project.download || "";
+            if (!project.download) zip.style.display = "none";
+
             const git = document.getElementById("link-git");
             git.href = project.github || "";
-            if (!project.github) git.style.display = "none";
+            if (!project.github || project.github == "not yet") git.style.display = "none";
 
             const lib = document.getElementById("link-lib");
             lib.href = project.assetLib || "";
-            if (!project.assetLib) lib.style.display = "none";
+            if (!project.assetLib || project.assetLib == "not yet") lib.style.display = "none";
 
             const slides = (project.images && project.images.length)
                 ? project.images.slice()
@@ -147,7 +158,7 @@
 
         }
 
-
+    });
     </script>
 
 

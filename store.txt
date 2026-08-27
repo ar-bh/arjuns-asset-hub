@@ -1,0 +1,24 @@
+category: Godot 4
+cover: assets/godot-4/godot-4.webp
+
+project: Basic FPS Controller
+featured: yes
+description: A beginner-friendly simple first-person controller for Godot 4
+github: https://github.com/ar-bh/basic-fps-controller-godot
+assetLib: https://godotengine.org/asset-library/asset/5421
+video: https://youtube.com/watch?v=_U7ih_c0CjA
+image: assets/basic-fps-controller/fps.png
+images: assets/basic-fps-controller/fps.png | assets/basic-fps-controller/fps2.png
+features: walk, sprint, and jump | mouse look | graybox test map | debug mode | easy to edit
+download: https://github.com/ar-bh/basic-fps-controller-godot/archive/refs/heads/main.zip
+
+project: 3D Platformer
+featured: yes
+description: A beginner-friendly third-person platformer controller for Godot 4 (similar to Super Mario Odyssey)
+github: https://github.com/ar-bh/3d-platformer-godot
+assetLib: not yet
+video: https://www.youtube.com/watch?v=hTecTXTglr4
+image: assets/3d-platformer/icon.png
+images: assets/3d-platformer/preview1.png | assets/3d-platformer/preview2.png | assets/3d-platformer/preview3.png
+features: orbital camera with mouse | walk, jump, and gravity | colorful test map | easy to edit
+download: https://github.com/ar-bh/3d-platformer-godot/archive/refs/heads/main.zip

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Augie Pixel";
-    src: url("augiepixel.ttf") format("truetype");
+    src: url("assets/augiepixel.ttf") format("truetype");
 }
 
 * {
@@ -10,6 +10,7 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
     font-smooth: never;
     color: #111;
     background: #fff;
+    height: 100%;
     overflow-x: hidden;
 }
 
@@ -32,6 +34,9 @@ nav {
     padding: 1.2vw 4vw;
     font-size: clamp(24px, 3vw, 48px);
     background-color: #ff9625;
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
 
 .brand {
@@ -107,10 +112,6 @@ h1 {
 }
 
 .scroll {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 28px;
     margin: 0;
     text-align: center;
 }
@@ -337,28 +338,28 @@ h1 {
 }
 
 .download {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
     padding-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .download h2 {
-    margin: 0 0 4px;
-    font-size: clamp(32px, 3.4vw, 52px);
+    margin: 0 0 8px;
+    font-size: clamp(26px, 2.8vw, 44px);
     font-weight: normal;
     text-decoration: none;
 }
 
-.download a {
+.download a{
     display: inline-block;
     width: fit-content;
-    margin-left: 8px;
-    padding: 2px 10px;
-    border: 2px solid #111;
+    margin: 0 8px 8px 0;
+    padding: 8px 18px;
+    border: 3px solid #111;
     border-radius: 8px;
     color: #111;
-    font-size: clamp(20px, 2.2vw, 32px);
+    font-size: clamp(22px, 2.4vw, 36px);
     text-decoration: underline;
 }
 
@@ -446,24 +447,49 @@ h1 {
         flex: none;
     }
 
+    .download {
+        grid-template-columns: 1fr;
+    }
+
     .desc-features h2,
     .desc-features p,
-    .desc-features li,
-    .download h2,
-    .download a {
-        font-size: clamp(18px, 5vw, 28px);
+    .desc-features li {
+        font-size: clamp(18px, 5vw, 26px);
     }
+
+    .download a {
+        font-size: clamp(20px, 5vw, 32px);
+        padding: 8px 16px;
+    }
+
+    .download h2 {
+        font-size: clamp(16px, 4.2vw, 24px)
+    }
+}
+
+.page-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.hero,
+.featured {
+    height: 100%;
+    min-height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .hero {
     position: relative;
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: calc(100vh - 120px);
     width: 100%;
     padding: 24px 24px 80px;
 }
@@ -471,10 +497,12 @@ h1 {
 .hero .scroll {
     position: absolute;
     left: 0;
-    right:0;
+    right: 0;
     bottom: 28px;
+    z-index: 2;
     color: #111;
     text-decoration: none;
+    font-size: clamp(18px, 2vw, 28px);
 }
 
 .featured {
@@ -483,13 +511,10 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .featured .page-title {
     margin-top: 0;
-    font-size: clamp(40px, 6vw, 72px);
-}
-
-html {
-    scroll-behavior: smooth;
+    font-size: clamp(64px, 9vw, 120px);
 }

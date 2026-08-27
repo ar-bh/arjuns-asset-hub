@@ -30,8 +30,9 @@
         <div id="categories" class="card-list"></div>
     </main>
 
-    <script src="data.js"></script>
+    <script src="load-store.js"></script>
     <script>
+    loadStore().then(function () {
         const box = document.getElementById("categories");
         const names = Object.keys(store);
 
@@ -63,6 +64,7 @@
         addCard("coming soon", "", "", "soon");
         addCard("coming soon", "", "", "soon");
         addCard("coming soon", "", "", "soon");
+    });
     </script>
 
 </body>

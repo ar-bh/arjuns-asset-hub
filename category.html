@@ -31,8 +31,9 @@
         <div id="projects"class="card-list"></div>
     </main>
 
-    <script src="data.js"></script>
+    <script src="load-store.js"></script>
     <script>
+    loadStore().then(function () {
         const params = new URLSearchParams(window.location.search);
         const categoryName = params.get("name");
         const category = store[categoryName];
@@ -72,6 +73,7 @@
             }
             addCard("coming soon", "", "", "soon");
         }
+    });
     </script>
 
 
