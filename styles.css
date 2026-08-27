@@ -384,6 +384,15 @@ h1 {
     color: #fff;
 }
 
+.private-note {
+    margin: 32px 0 0;
+    font-size: clamp(56px, 5.1vw, 90px);
+}
+
+.hidden {
+    display: none;
+}
+
 .popup {
     position: fixed;
     inset: 0;

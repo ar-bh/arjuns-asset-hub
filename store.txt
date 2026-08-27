@@ -22,3 +22,18 @@ image: assets/3d-platformer/icon.png
 images: assets/3d-platformer/preview1.png | assets/3d-platformer/preview2.png | assets/3d-platformer/preview3.png
 features: orbital camera with mouse | walk, jump, and gravity | colorful test map | easy to edit
 download: https://github.com/ar-bh/3d-platformer-godot/archive/refs/heads/main.zip
+
+category: LEGO Blender
+cover: assets/lego-blender/lego-head.jpg
+
+project: LEGO Arjun
+featured: no
+private: yes
+privateText: not for you 😛
+description: only for Arjun, stored here for my future use. this asset was made using MecaBricks and Blender
+github: not yet
+asestLib: not yet
+video:
+image: assets/lego-arjun/mejumpsmall.png
+images: assets/lego-arjun/mejumpsmall.png | assets/lego-arjun/mejump.png | assets/lego-arjun/redarjunclose.png | assets/lego-arjun/redarjunfull.png | assets/lego-arjun/redarjununshaded.png
+features: purple hoodie | me | hooray
