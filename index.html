@@ -29,12 +29,15 @@
     </nav>
 
     <div class="page-scroll">
-        <section class="hero">
+       <section class="hero">
+        <div class="hero-video" aria-hidden="true">
+            <iframe id="hero-frame" title="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" playsinline webkit-playsinline></iframe>
+        </div>
             <h1>Arjun's Asset Hub</h1>
             <p class="byline">made by 14yo Arjun Bhumula</p>
             <p class="mission">to help anyone jump into their game-dev and animation career with helpful tools and resources!</p>
             <a class="scroll" href="#featured">scroll down <br><span class="arrow">▼</span></a>
-        </section>
+       </section>
 
         <section id="featured" class="featured">
             <h2 class="page-title">featured projects</h2>
@@ -46,6 +49,50 @@
     <script src="load-store.js"></script>
     <script>
     loadStore().then(function () {
+        function youtubeId(url) {
+            const match = (url || "").match(/[?&]v=([^&]+)/);
+            return match ? match[1] : "";
+        }
+
+        const ids = [];
+        for (const category of Object.values(store)) {
+            for (const project of Object.values(category.projects)) {
+                const id = youtubeId(project.video);
+                if (id && ids.indexOf(id) === -1) ids.push(id);
+            }
+        }
+
+        const quiet = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const frame = document.getElementById("hero-frame");
+        if (frame && ids.length && !quiet) {
+            frame.src = "https://www.youtube-nocookie.com/embed/" + ids[0]
+                + "?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
+                + "&loop=1&fs=0&disablekb=1&iv_load_policy=3&enablejsapi=1"
+                + "&origin=" + encodeURIComponent(window.location.origin)
+                + "&playlist="
+                + ids.join(",");
+
+            function kickHero() {
+                if (!frame.contentWindow) return;
+                const send = function (func) {
+                    frame.contentWindow.postMessage(JSON.stringify({
+                        event: "command",
+                        func: func,
+                        args: []
+                    }), "*");
+                };
+                send("mute");
+                send("playVideo");
+            }
+
+            frame.addEventListener("load", function () {
+                kickHero();
+                setTimeout(kickHero, 400);
+            });
+            document.addEventListener("touchstart", kickHero, { once: true, passive: true });
+            document.addEventListener("pointerdown", kickHero, { once: true });
+        }
+
         const box = document.getElementById("featured-list");
 
         function addCard(label, href, image) {

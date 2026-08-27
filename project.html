@@ -60,7 +60,7 @@
             <div class="download">
                 <div>
                     <h2>Download directly</h2>
-                    <a id="link-zip">.zip</a>
+                    <button id="download-now" type="button">Download now</button>
                 </div>
                 <div>
                     <h2>Download on your own</h2>
@@ -74,6 +74,14 @@
         </div>
     </div>
    </main>
+
+    <div id="download-popup" class="popup hidden">
+        <div class="popup-box">
+            <p>Choose a file</p>
+            <a id="link-zip">.zip</a>
+            <button id="popup-close" type="button">close</button>
+        </div>
+    </div>
 
     <script src="load-store.js"></script>
     <script>
@@ -101,7 +109,26 @@
 
             const zip = document.getElementById("link-zip");
             zip.href = project.download || "";
-            if (!project.download) zip.style.display = "none";
+
+            const openBtn = document.getElementById("download-now");
+            const popup = document.getElementById("download-popup");
+            const closeBtn = document.getElementById("popup-close");
+
+            if (!project.download) {
+                openBtn.style.display = "none";
+            } else {
+                openBtn.onclick = function () {
+                    popup.classList.remove("hidden");
+                };
+                closeBtn.onclick = function () {
+                    popup.classList.add("hidden");
+                };
+                popup.onclick = function (event) {
+                    if (event.target === popup) {
+                        popup.classList.add("hidden");
+                    }
+                };
+            }
 
             const git = document.getElementById("link-git");
             git.href = project.github || "";
