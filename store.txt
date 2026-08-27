@@ -23,6 +23,17 @@ images: assets/3d-platformer/preview1.png | assets/3d-platformer/preview2.png | 
 features: orbital camera with mouse | walk, jump, and gravity | colorful test map | easy to edit
 download: https://github.com/ar-bh/3d-platformer-godot/archive/refs/heads/main.zip
 
+project: Marble Run Controller
+featured: no
+description: A more advanced third-person marble run controller for Godot 4
+github: https://github.com/ar-bh/marble-run-controller
+assetLib: not yet
+video:
+image: assets/marble-run/icon.png
+features: orbital camera with mouse | roll in all directions | graybox test map | slightly advanced
+download: https://github.com/ar-bh/marble-run-controller/archive/refs/heads/main.zip
+images: assets/marble-run/preview1.png | assets/marble-run/preview2.png
+
 category: LEGO Blender
 cover: assets/lego-blender/lego-head.jpg
 
@@ -37,3 +48,13 @@ video:
 image: assets/lego-arjun/mejumpsmall.png
 images: assets/lego-arjun/mejumpsmall.png | assets/lego-arjun/mejump.png | assets/lego-arjun/redarjunclose.png | assets/lego-arjun/redarjunfull.png | assets/lego-arjun/redarjununshaded.png
 features: purple hoodie | me | hooray
+
+project: LEGO person
+featured: no
+description: still in the works, coming soon though!
+github: not yet
+assetLib: not yet
+video:
+image:
+images:
+features:
