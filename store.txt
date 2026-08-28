@@ -49,12 +49,30 @@ image: assets/lego-arjun/mejumpsmall.png
 images: assets/lego-arjun/mejumpsmall.png | assets/lego-arjun/mejump.png | assets/lego-arjun/redarjunclose.png | assets/lego-arjun/redarjunfull.png | assets/lego-arjun/redarjununshaded.png
 features: purple hoodie | me | hooray
 
+project: LEGO crying castle crasher
+featured: no
+description: yes, a lego version of the blue knight from the game Castle Crashers. custom-made (using Mecabricks), unofficial, and made by me a long time ago. not sure why he's crying though
+image: assets/crying-castle-crasher/battlefield-castle-crasher.png
+images: assets/crying-castle-crasher/battlefield-castle-crasher.png | assets/crying-castle-crasher/saluting-castle-crasher.png
+download: assets/crying-castle-crasher/crying-castle-crasher.blend
+
+project: LEGO crying guy
+featured: no
+description: some green LEGO guy that I was going to use in my game but gave up :P also crying, don't know why but made in mecabricks by me!
+image: assets/regular-lego-crying-guy/crying-guy-screenie.png
+download: assets/regular-lego-crying-guy/lego-crying-guy.blend
+
 project: LEGO person
 featured: no
 description: still in the works, coming soon though!
-github: not yet
-assetLib: not yet
-video:
-image:
-images:
-features:
+
+
+
+category: Fonts
+cover: assets/fonts/font.png
+
+project: Augie Pixel
+description: Made for Jame Gam on Hack Club by @Augie (on slack), this is not my font! although, free to use without credit or permission. this font is used for this very website tho!
+download: assets/augiepixel.ttf
+image: assets/augie-pixel/augie-pixel-preview.png
+images: assets/augie-pixel/augie-pixel-preview.png

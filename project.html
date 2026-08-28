@@ -119,6 +119,10 @@
 
             const zip = document.getElementById("link-zip");
             zip.href = project.download || "";
+            const file = (project.download || "").split("?")[0].split("/").pop() || "file";
+            const dot = file.lastIndexOf(".");
+            zip.textContent = dot === -1 ? file : file.slice(dot);
+            zip.setAttribute("download", file);
 
             const openBtn = document.getElementById("download-now");
             const popup = document.getElementById("download-popup");
