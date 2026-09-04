@@ -34,6 +34,17 @@ features: orbital camera with mouse | roll in all directions | graybox test map 
 download: https://github.com/ar-bh/marble-run-controller/archive/refs/heads/main.zip
 images: assets/marble-run/preview1.png | assets/marble-run/preview2.png
 
+project: 3D Bear Controller
+featured: yes
+description: A more advanced third-person bear controller for Godot 4 (kinda inspired by red dead)
+github: https://github.com/ar-bh/3d-bear-controller
+assetLib: not yet
+video:
+image: assets/3d-bear-controller/3d-bear-controller.png
+features: orbital camera with mouse | walk and run in all directions | green graybox test map | slightly advanced | beautiful and well-implemented animations
+download: https://github.com/ar-bh/3d-bear-controller/archive/refs/heads/main.zip
+images: assets/3d-bear-controller/3d-bear-controller.png | assets/3d-bear-controller/standing-bear.png | assets/3d-bear-controller/running-bear.png
+
 category: LEGO Blender
 cover: assets/lego-blender/lego-head.jpg
 
