@@ -68,7 +68,8 @@
                     project.name,
                     "project.html?category=" + encodeURIComponent(categoryName)
                     + "&name=" + encodeURIComponent(project.name),
-                    project.image
+                    project.image,
+                    project.featured ? "is-featured" : ""
                 )
             }
             addCard("coming soon", "", "", "soon");

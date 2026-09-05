@@ -49,7 +49,7 @@ category: 2D Godot 4
 cover: assets/2d-godot-4/godot-2d.webp
 
 project: Basic 2D Platformer
-featured: no
+featured: yes
 description: A super-beginner-friendly side-view platformer controller for Godot 4
 github: https://github.com/ar-bh/basic-2d-platformer
 assetLib: not yet
