@@ -1,5 +1,5 @@
-category: Godot 4
-cover: assets/godot-4/godot-4.webp
+category: 3D Godot 4
+cover: assets/3d-godot-4/godot-3d.webp
 
 project: Basic FPS Controller
 featured: yes
@@ -44,6 +44,20 @@ image: assets/3d-bear-controller/3d-bear-controller.png
 features: orbital camera with mouse | walk and run in all directions | green graybox test map | slightly advanced | beautiful and well-implemented animations
 download: https://github.com/ar-bh/3d-bear-controller/archive/refs/heads/main.zip
 images: assets/3d-bear-controller/3d-bear-controller.png | assets/3d-bear-controller/standing-bear.png | assets/3d-bear-controller/running-bear.png
+
+category: 2D Godot 4
+cover: assets/2d-godot-4/godot-2d.webp
+
+project: Basic 2D Platformer
+featured: no
+description: A super-beginner-friendly side-view platformer controller for Godot 4
+github: https://github.com/ar-bh/basic-2d-platformer
+assetLib: not yet
+video:
+image: assets/2d-platformer/2d-platformer-run.png
+images: assets/2d-platformer/2d-platformer-run.png | assets/2d-platformer/2d-platformer-fall.png | assets/2d-platformer/2d-platformer-stand.png
+features: walk and sprint left and right | jump with coyote time | pixel playground map from Kenneys CC0 | character art non-commercial | idle walk run jump animation | easy to edit
+download: https://github.com/ar-bh/basic-2d-platformer/archive/refs/heads/main.zip
 
 category: LEGO Blender
 cover: assets/lego-blender/lego-head.jpg

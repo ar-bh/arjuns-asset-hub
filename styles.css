@@ -687,4 +687,30 @@ h1 {
         min-height: 140px;
         border-width: 4px;
     }
+
+    main {
+        justify-content: flex-start;
+        padding: 16px 12px 40ps;
+        overflow-x: hidden;
+    }
+
+    .page-title,
+    h1 {
+        font-size: clamp(28px, 8vw, 48px);
+        margin-top: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .project-head,
+    .project-layout {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .back {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
 }
+
