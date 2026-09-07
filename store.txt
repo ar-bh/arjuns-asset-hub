@@ -1,6 +1,16 @@
 category: 3D Godot 4
 cover: assets/3d-godot-4/godot-3d.webp
 
+project: Advanced Physics Simulator
+featured: yes
+description: An advanced but super-fun to play with first-person controller that simulates physics with tons of things to do for Godot 4
+github: https://github.com/ar-bh/advanced-physics-simulator
+assetLib: not yet
+video: https://www.youtube.com/watch?v=C-SV0Sdd3D4&feature=youtu.be
+image: assets/advanced-physics-sim/icon.png
+images: assets/advanced-physics-sim/icon.png | assets/advanced-physics-sim/hold-minion.png | assets/advanced-physics-sim/select-minion.png | assets/advanced-physics-sim/editor-view.png
+features: walk, sprint, and jump | mouse | look | test map | pick up and throw things (blocks and minions) | push blocks around | super strength | debug mode | tons of ways to play | destruction | do whatever you want
+
 project: Basic FPS Controller
 featured: yes
 description: A beginner-friendly simple first-person controller for Godot 4
@@ -10,10 +20,9 @@ video: https://youtube.com/watch?v=_U7ih_c0CjA
 image: assets/basic-fps-controller/fps.png
 images: assets/basic-fps-controller/fps.png | assets/basic-fps-controller/fps2.png
 features: walk, sprint, and jump | mouse look | graybox test map | debug mode | easy to edit
-download: https://github.com/ar-bh/basic-fps-controller-godot/archive/refs/heads/main.zip
 
 project: 3D Platformer
-featured: yes
+featured: no
 description: A beginner-friendly third-person platformer controller for Godot 4 (similar to Super Mario Odyssey)
 github: https://github.com/ar-bh/3d-platformer-godot
 assetLib: not yet
@@ -21,7 +30,6 @@ video: https://www.youtube.com/watch?v=hTecTXTglr4
 image: assets/3d-platformer/icon.png
 images: assets/3d-platformer/preview1.png | assets/3d-platformer/preview2.png | assets/3d-platformer/preview3.png
 features: orbital camera with mouse | walk, jump, and gravity | colorful test map | easy to edit
-download: https://github.com/ar-bh/3d-platformer-godot/archive/refs/heads/main.zip
 
 project: Marble Run Controller
 featured: no
@@ -31,18 +39,16 @@ assetLib: not yet
 video:
 image: assets/marble-run/icon.png
 features: orbital camera with mouse | roll in all directions | graybox test map | slightly advanced
-download: https://github.com/ar-bh/marble-run-controller/archive/refs/heads/main.zip
 images: assets/marble-run/preview1.png | assets/marble-run/preview2.png
 
 project: 3D Bear Controller
-featured: yes
+featured: no
 description: A more advanced third-person bear controller for Godot 4 (kinda inspired by red dead)
 github: https://github.com/ar-bh/3d-bear-controller
 assetLib: not yet
 video:
 image: assets/3d-bear-controller/3d-bear-controller.png
 features: orbital camera with mouse | walk and run in all directions | green graybox test map | slightly advanced | beautiful and well-implemented animations
-download: https://github.com/ar-bh/3d-bear-controller/archive/refs/heads/main.zip
 images: assets/3d-bear-controller/3d-bear-controller.png | assets/3d-bear-controller/standing-bear.png | assets/3d-bear-controller/running-bear.png
 
 category: 2D Godot 4
@@ -57,7 +63,6 @@ video:
 image: assets/2d-platformer/2d-platformer-run.png
 images: assets/2d-platformer/2d-platformer-run.png | assets/2d-platformer/2d-platformer-fall.png | assets/2d-platformer/2d-platformer-stand.png
 features: walk and sprint left and right | jump with coyote time | pixel playground map from Kenneys CC0 | character art non-commercial | idle walk run jump animation | easy to edit
-download: https://github.com/ar-bh/basic-2d-platformer/archive/refs/heads/main.zip
 
 category: LEGO Blender
 cover: assets/lego-blender/lego-head.jpg

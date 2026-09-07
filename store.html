@@ -27,6 +27,7 @@
     <main>
         <h1 class="page-title">Asset Store</h1>
         <p class="byline"></p>
+        <input id="search" class="search" type="search" placeholder="search">
         <div id="categories" class="card-list"></div>
     </main>
 
@@ -60,10 +61,14 @@
             );
         }
 
-        addCard("coming soon", "", "", "soon");
-        addCard("coming soon", "", "", "soon");
-        addCard("coming soon", "", "", "soon");
-        addCard("coming soon", "", "", "soon");
+        const search = document.getElementById("search");
+        search.oninput = function () {
+            const q = search.value.toLowerCase().trim();
+            box.querySelectorAll(".tile").forEach(function (tile) {
+                const name = tile.textContent.toLowerCase();
+                tile.style.display = !q || name.indexOf(q) !== -1 ? "" : "none";
+            });
+        };
     });
     </script>
 

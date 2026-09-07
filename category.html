@@ -28,7 +28,8 @@
     <main>
         <h1 id="category-title" class="page-title"></h1>
         <p class="byline">projects</p>
-        <div id="projects"class="card-list"></div>
+        <input id="search" class="search" type="search" placeholder="search">
+        <div id="projects" class="card-list"></div>
     </main>
 
     <script src="load-store.js"></script>
@@ -63,7 +64,10 @@
         if (!projects) {
             box.textContent = "No projects in this category yet.";
         } else {
-            for (const project of Object.values(projects)) {
+            const list = Object.values(projects).slice().sort(function (a, b) {
+                return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+            });
+            for (const project of list) {
                 addCard(
                     project.name,
                     "project.html?category=" + encodeURIComponent(categoryName)
@@ -72,7 +76,15 @@
                     project.featured ? "is-featured" : ""
                 )
             }
-            addCard("coming soon", "", "", "soon");
+
+            const search = document.getElementById("search");
+            search.oninput = function () {
+                const q = search.value.toLowerCase().trim();
+                box.querySelectorAll(".tile").forEach(function (tile) {
+                    const name = tile.textContent.toLowerCase();
+                    tile.style.display = !q || name.indexOf(q) !== -1 ? "" : "none";
+                });
+            };
         }
     });
     </script>

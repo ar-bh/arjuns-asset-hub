@@ -65,13 +65,11 @@
                 <div>
                     <h2>Download on your own</h2>
                     <a id="link-git" target="_blank">GitHub</a>
+                    <button type="button" id="copy-clone">copy clone</button>
                     <a id="link-lib" target="_blank">Godot Asset Library</a>
                 </div>
             </div>
             <p id="private-note" class="private-note hidden"></p>
-
-
-
         </div>
     </div>
    </main>
@@ -117,9 +115,15 @@
                 note.textContent = project.privateText || "not for you";
             }
 
+            function githubZip(url) {
+                if (!url || url === "not yet") return "";
+                return url.replace(/\.git$/, "") + "/archive/refs/heads/main.zip";
+            }
+            const downloadUrl = project.download || githubZip(project.github);
+
             const zip = document.getElementById("link-zip");
-            zip.href = project.download || "";
-            const file = (project.download || "").split("?")[0].split("/").pop() || "file";
+            zip.href = downloadUrl;
+            const file = downloadUrl.split("?")[0].split("/").pop() || "file";
             const dot = file.lastIndexOf(".");
             zip.textContent = dot === -1 ? file : file.slice(dot);
             zip.setAttribute("download", file);
@@ -128,7 +132,7 @@
             const popup = document.getElementById("download-popup");
             const closeBtn = document.getElementById("popup-close");
 
-            if (!project.download) {
+            if (!downloadUrl) {
                 openBtn.style.display = "none";
             } else {
                 openBtn.onclick = function () {
@@ -147,6 +151,21 @@
             const git = document.getElementById("link-git");
             git.href = project.github || "";
             if (!project.github || project.github == "not yet") git.style.display = "none";
+
+            const cloneBtn = document.getElementById("copy-clone");
+            if (!project.github || project.github === "not yet") {
+                cloneBtn.style.display = "none";
+            } else {
+                cloneBtn.onclick = function () {
+                    const url = project.github.replace(/\.git$/, "") + ".git";
+                    navigator.clipboard.writeText("git clone " + url).then(function () {
+                        cloneBtn.textContent = "copied";
+                        setTimeout(function () {
+                            cloneBtn.textContent = "copy clone";
+                        }, 1200);
+                    });
+                };
+            }
 
             const lib = document.getElementById("link-lib");
             lib.href = project.assetLib || "";
