@@ -1,56 +1,77 @@
-# Arjun's Asset Hub!
+# Arjun's Asset Hub
 
-Beginner-friendly game-dev and animation assets
-Made easy to download, open, and use in your own projects!
+A growing collection of game-development and animation assets ranging from beginner-friendly to advanced.
 
-![Logo](assets/logo.png)
+I designed these projects to be easy to download, test, understand, and customize.
 
----
+[Visit the Asset Hub](https://ar-bh.github.io/arjuns-asset-hub/)
 
-# What you can find here
+![Arjun's Asset Hub logo](assets/logo.png)
 
-The website is split into categories:
+## What's included :)
 
-**Godot 4**
+### 3D Godot 4
 
-- [Basic FPS Controller](https://github.com/ar-bh/basic-fps-controller-godot) - walk, sprint, jump, mouse look, graybox test map. Also on the [Godot Asset Library](https://godotengine.org/asset-library/asset/5421)!!
-- [3D Platformer](https://github.com/ar-bh/3d-platformer-godot) — third-person controller like Super Mario Odyssey! comes with run, jump, fall and sweet Gobot animations from GDQuest! (ty!)
-- [Marble Run Controller](https://github.com/ar-bh/marble-run-controller) — roll a Jupiter-themed (idk why) marble in all directions with another orbital camera
-- ## and many more!!! (soon to come)
+- [Advanced Physics Simulator](https://github.com/ar-bh/advanced-physics-simulator) — a first-person physics playground where you can grab, throw, push, and destroy objects.
+- [Basic FPS Controller](https://github.com/ar-bh/basic-fps-controller-godot) — walking, sprinting, jumping, mouse look, and a graybox test map.
+- [3D Platformer](https://github.com/ar-bh/3d-platformer-godot) — a third-person controller with an orbital camera and animated Gobot character.
+- [Marble Run Controller](https://github.com/ar-bh/marble-run-controller) — a physics-based marble controller with an orbital camera.
+- [3D Bear Controller](https://github.com/ar-bh/3d-bear-controller) — an animated third-person bear controller.
+- and more to come!
 
-**LEGO Blender**
+### 2D Godot 4
 
-- LEGO Arjun - unfortunately you cannot download this but more are coming!
+- [Basic 2D Platformer](https://github.com/ar-bh/basic-2d-platformer) - a beginner-friendly platformer with walking, sprinting, jumping, coyote time, animations, and Kenney pixel playgrounds
 
-Each Godot pack is a full project that you can open and customize in Godot 4.They have maps for immediate out-of-the-box testing and Inspector variables so you can tweak values without coding! Also comes with a detailed README for setup instructions and a demo video to learn more :)
+### LEGO Blender
 
----
+Downloadable and personal LEGO-style creations made with Mecabricks and Blender (all custom-made by me, Arjun).
 
-# How to get an asset
+However, some projects are private, unfinished, unofficial fan creations, or unavailable for download. Read each project's page before using an asset.
 
-1. Open the [Asset Store](store.html) and pick a category (for example **Godot 4**).
-2. Open a project. You’ll see a description, feature list, screenshots, and often a video.
-3. Download however you like:
-   - **Download now** — grab a `.zip`
-   - **GitHub** — clone or browse the source thats linked
-   - **Godot Asset Library** — install from inside Godot when a listing exists (some are pending, most aren't)
-     Then open the project in Godot (or Blender, for LEGO assets) and follow that asset’s own README.
+### Fonts
 
----
+- **_Augie Pixel_** - the pixel font used throughout this website, created by Augie (on Slack) for Hack Club's Jame Gam.
 
-# Featured right now
+## Using Arjun's Asset Hub
 
-The home page has packs that are ready to use that are **Arjun's personal favorites!** Scroll down and explore them!
+1. Open the [Asset Hub](https://ar-bh.github.io/arjuns-asset-hub/)
+2. Select **Asset Store**
+3. Choose a category (`3D Godot 4`, `LEGO Blender`, etc.)
+4. Download the file directly, open its GitHub repository, or copy its Git clone command.
+5. Follow the steps in its corresponding README to get started and learn more about the asset and how to use it.
 
----
+Godot projects include test maps and editable Inspector settings. Be sure to check each project's README for installation instructions, controls, licenses, and credits before using it.
 
-# Requests
+## Featured projects
 
-If you found a bug, want to request a feature, or have an idea for the next pack, then open an issue or discussion on this repository, or on the assets own Github Page. Please do this!
+Projects marked with an orange glow and star are some of my current favorite projects. That's why this list is always changing! Featured projects also appear on the Home page.
 
----
+## Licenses and credits
 
-# Credits
+Licenses vary between projects. For more information, see each project's README.
 
-- Made by Arjun Bhumula!
-- Textures and extras are credited in each asset's README
+Some included third-party artwork may have separate restrictions, including non-commercial-use requirements. Always read the license and credits included with an asset before using it. This is mentioned so many times because it is **extremely important**.
+
+Notable resources include:
+
+- [Godot Engine](https://godotengine.org/)
+- [Kenney](https://kenney.nl/) assets
+- [GDQuest Gobot](https://github.com/GDQuest/godot-4-3D-Characters)
+- Mecabricks and Blender
+- Augie Pixel by Augie
+
+## Feedback and requests
+
+Found a bug or have an idea for another asset?
+
+[Open an issue](https://github.com/ar-bh/arjuns-asset-hub/issues) or visit the related project’s GitHub repository.
+
+## About
+
+Made by Arjun Bhumula (2026, @14) to help beginners start creating games and animations.
+Made for Hack Club's Stardance Challenge. More assets will be released periodically, although there is no guarantee and chances are they will **not** be for Hack Club's Stardance Challenge.
+
+### Version v2.0.0
+
+### Arjun's Asset Hub v2.0 - Bigger Store Updates and Quality of Life improvements
